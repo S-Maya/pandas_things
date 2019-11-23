@@ -1,5 +1,6 @@
 import pandas as pd
 df = pd.read_csv("election_data.csv")
-total_num_votes =df["voter id"].shape[0]
-count_df = df.groupby("candidate").count()[["voter id"]].assign(proportion=lambda df:["voter id"] / total_num_votes)
+total_num_votes = df["Voter ID"].shape[0]
+count_df = df.groupby("Candidate").count()[["Voter ID"]].assign(proportion=lambda df: df["Voter ID"] / total_num_votes)
 print(count_df)
+
